@@ -1,3 +1,4 @@
+<script charset="utf-8" type="text/javascript">
 let n = prompt('n: ', '10');
 const f = x => ((x.toString().includes('.')) ? 1 : 0)
 
@@ -19,17 +20,16 @@ else
     document.write('<table align="center" border = "1" style="border-width: 1px;border-collapse: collapse;" cellspacing="0">');
 
 
-    for(let i = 0; i<8;i++)
+    for(let i = 0; i<n;i++)
     {
         document.write('<tr>');
 
-        for(let j = 0; j< 8; j++)
+        for(let j = 0; j< n; j++)
         {
-            if(((i%2==0)&&((j==0)||(j==1)||(j==4)||(j==5)))||(!(i%2==0)&&((j==2)||(j==3)||(j==6)||(j==7))))
+            if((Math.floor(j/2) + i)%2==0)
             {
                 document.write('<td bgcolor="gray"> </td>');
-            }
-            else
+            } else
             {
                 document.write('<td bgcolor="white" style="border: 1px solid black; padding: 2px"> </td>');
             }
@@ -47,3 +47,4 @@ else
         document.write('<hr width=' + out + '%>');
     }
 }
+</script>
